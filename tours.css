@@ -1,0 +1,46 @@
+body{
+    margin:0;
+    font-family: 'Bree Serif', serif;
+    background: whitesmoke;
+}
+header{
+    background:linear-gradient(45deg,darkblue ,black, red);
+    padding:10px;
+    text-align: center;
+}
+
+
+.menu nav{
+    background: none;
+}
+.menu a{
+    text-decoration: none;
+    color:silver;
+    text-align: center;
+    margin-right:10%;
+}
+.menu a:hover{
+    font-size: 20px;
+    box-shadow: 0 0 10px 0px darkblue;
+    transition: all  linear;
+    transition-duration: 0.3s;
+
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding-right:5%;
+    padding-left:15%;
+}
+.menu {
+    font-size: 25px;
+    text-align: center;
+}
+main p{
+    font-size: 150px;
+    color:black;
+    opacity:0.5;
+    margin-top:15%;
+    text-align: center;
+}

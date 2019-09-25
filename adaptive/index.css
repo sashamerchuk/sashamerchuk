@@ -1,0 +1,98 @@
+
+
+@media screen and (min-width:360px) and (max-width: 500px){
+    body{
+        display: grid;
+        grid-template-areas: "header header" "nav article " "footer footer";
+        grid-template-rows:35vw 1fr 35vw;
+        grid-template-columns:30% 1fr;
+        grid-auto-rows: 5vw 5vw 5vw;
+        grid-auto-columns:20% 1fr 0;
+        grid-gap:5px;
+        height:100vh;
+        margin:0;
+        padding: 0;
+        font-family: 'Bree Serif', serif;
+        background-color:silver;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .img6 {
+        grid-row-start: 6;
+        grid-column-start: 1;
+        grid-row-end: 9;
+        grid-column-end: 5;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+        .img9{
+            grid-row-start: 9;
+            grid-column-start: 1;
+            grid-row-end: 9;
+            grid-column-end: 5;
+        }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .img10{
+        grid-row-start: 11;
+        grid-column-start: 1;
+        grid-row-end: 17;
+        grid-column-end: 8;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .img11{
+        grid-row-start: 13;
+        grid-column-start: 8;
+        grid-row-end: 18;
+        grid-column-end: 14;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .menu{
+        font-size: 12px;
+        text-align: center;
+        padding-right:0%;
+        padding-left: 0%;
+        flex-flow: row nowrap;
+    }
+    .menu a{
+        margin-right: 5%;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .pageFooter img{
+        margin-top:10%;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .mainArticle {
+        overflow-y: scroll;
+        grid-area:article;
+        display:grid;
+        grid-template-areas: "img1 img2 img3"
+        "img1  img4 img5"
+        "img7 img6 img8"
+        "img9 img10 img11";
+        grid-template-rows:repeat(15,5vw);
+        grid-template-columns:repeat(11, 1fr);
+        grid-auto-flow: dense;
+        margin:0;
+        padding: 0;
+        grid-gap: 0;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    .mainNav{
+        padding: 0;
+        font-size: 16px;
+    }
+    .mainNav .submenu li{
+        margin-left: -40%;
+    }
+}
+@media screen and (min-width:360px) and (max-width: 500px){
+    #siteAds{
+        display:none;
+    }
+}
