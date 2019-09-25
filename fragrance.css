@@ -52,9 +52,9 @@ header{
 }
 .fragranceGrid{
     display:grid;
-    grid-template-rows: repeat(15,5vw);
+    grid-template-rows: repeat(35,5vw);
     grid-template-columns: repeat(10,1fr);
-    grid-template-areas: "img1 img2 img3" "img4 img5 img6";
+    grid-template-areas: "img1 img2 img3" "img4 img5 img6" "img7 img8 img9";
     grid-auto-columns: 1fr 1fr 1fr;
     grid-auto-rows: 5vw;
     height:150vh;
@@ -79,13 +79,23 @@ header{
 .img6{
     grid-area:img6;
 }
+.img7{
+    grid-area:img7;
+}
+.img8{
+    grid-area:img8;
+}
+.img9{
+    grid-area:img9;
+}
+
 .img1 img{
     width:70%;
 }
 .img1{
     grid-row-start: 4;
     grid-column-start: 2;
-    grid-row-end: 4;
+    grid-row-end: 9;
     grid-column-end: 4;
 }
 .img2{
@@ -101,22 +111,41 @@ header{
     grid-column-end: 10;
 }
 .img4{
-    grid-row-start: 9;
-    grid-column-start: 2;
-    grid-row-end: 14;
+    grid-row-start: 11;
+    grid-column-start: 1;
+    grid-row-end: 17;
     grid-column-end: 5;
 }
 .img5{
-    grid-row-start: 8;
+    grid-row-start: 9;
     grid-column-start:4;
-    grid-row-end: 14;
+    grid-row-end: 13;
     grid-column-end: 7;
 }
 .img6{
-    grid-row-start: 6;
+    grid-row-start: 7;
     grid-column-start:7;
-    grid-row-end: 14;
+    grid-row-end: 15;
     grid-column-end: 10;
+}
+.img7{
+    grid-row-start: 19;
+    grid-column-start:1;
+    grid-row-end: 23;
+    grid-column-end: 4;
+}
+.img8{
+    grid-row-start: 17;
+    grid-column-start:4;
+    grid-row-end: 21;
+    grid-column-end: 7;
+}
+.img9{
+    grid-row-start: 16;
+    grid-column-start:7;
+    grid-row-end: 21;
+    grid-column-end: 10;
+
 }
 .img2 img{
     width:70%;
@@ -131,6 +160,15 @@ header{
     width:70%;
 }
 .img6 img{
+    width:70%;
+}
+.img7 img{
+    width:70%;
+}
+.img8 img{
+    width:70%;
+}
+.img9 img{
     width:70%;
 }
 .img1 p{
@@ -180,6 +218,27 @@ header{
     margin-top: 3%;
 }
 .img6 p{
+    font-size: 16px;
+    margin-left: -30%;
+    text-align: center;
+    opacity:0.5;
+    text-decoration: underline;
+}
+.img7 p{
+    font-size: 16px;
+    margin-left: -30%;
+    text-align: center;
+    opacity:0.5;
+    text-decoration: underline;
+}
+.img8 p{
+    font-size: 16px;
+    margin-left: -30%;
+    text-align: center;
+    opacity:0.5;
+    text-decoration: underline;
+}
+.img9 p{
     font-size: 16px;
     margin-left: -30%;
     text-align: center;
