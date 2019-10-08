@@ -1,60 +1,122 @@
 body{
-    display: grid;
-    grid-template-areas: "header header header" "nav article ads" "footer footer footer";
-    grid-template-rows:60px 1fr 60px;
-    grid-template-columns:20% 1fr 15%;
-    grid-gap:5px;
-    height:100vh;
     margin:0;
     font-family: 'Bree Serif', serif;
     background-color:silver;
+    background:linear-gradient(90deg,black 30%,darkred);
+    text-align: center;
 }
-header,footer,article,nav,div{
-    padding:20px;
+
+header,footer,article,nav{
     text-decoration: none;
     color:silver;
     font-size: 20px;
-    background-color: black;
+    text-align: center;
+    padding:10px;
 }
-.menu{
-    grid-area: header;
+.logo{
+    animation-name:menu;
+    animation: menu 1s linear;
 }
-.pageFooter{
-    grid-area: footer;
+.logo {
+    color: silver;
+    font-family: 'Mansalva', cursive;
+    font-size: 40px;
+    animation-name: logo;
+    margin-top: -1%;
+    margin-bottom: 0;
+}
+header .container-fluid{
+    align-items: baseline;
+}
+@keyframes logo {
+    from{
+        margin-left:-25%;
+    }
+    to{
+        margin-left: 5%;
+    }
 }
 
-.mainNav{
-    grid-area: nav;
-}
-.siteAds{
-    grid-area:ads;
-}
-.menu nav{
+header nav{
     background: none;
+    align-items: baseline;
 }
-.menu a{
+header nav a{
     text-decoration: none;
     color:silver;
     text-align: center;
-    margin-right:10%;
 }
-.menu a:hover{
+header nav{
+    animation-name:menu;
+}
+header nav a:hover{
     font-size: 20px;
-    box-shadow: 0 0 10px 0px darkblue;
+    color:blue;
     transition: all  linear;
     transition-duration: 0.3s;
+    text-decoration: none;
+}
+header nav ul{
+    list-style: none;
+}
+header nav li{
+    display: block;
+    transition-duration: 0.5s;
+}
+header nav li:hover {
+    cursor: pointer;
+}
+.topMenu1 a{
+    display: block;
+    width:100%;
+}
+
+header .submenu{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+header nav ul li:hover >ul, ul li ul :hover{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+.submenu1 li{
+    clear: both;
+    width:100%;
+    color: #fff;
+    background-color: black;
+    opacity: 0.7;
+    float: left;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.topMenu1 a{
+    text-decoration: none;
+    color:silver;
+    display: block;
 
 }
-.menu{
-    display: flex;
-    justify-content: center;
-    flex-flow: column;
-    padding-right:5%;
-    padding-left:15%;
+.topMenu1 li{
+    list-style: none;
 }
-.menu {
-    font-size: 25px;
-    text-align: center;
+.submenu1{
+    display: none;
+    text-decoration: none;
+}
+.topMenu1 li:hover .submenu1 {
+    display:block;
+    position:absolute;
+    transition:1s linear;
+    z-index: 1000;
+    margin-left: 10%;
+    text-decoration: none;
+    color:silver;
 }
 .img1{
     grid-area: img1;
@@ -103,6 +165,8 @@ header,footer,article,nav,div{
     margin:0;
     padding: 0;
     grid-gap: 0;
+    height:78.5vh;
+    border-radius: 20px;
 }
 .mainArticle img{
     width:100%;
@@ -164,45 +228,82 @@ header,footer,article,nav,div{
     grid-column-end: 8;
 }
 .img10{
-    grid-row-start: 14;
+    grid-row-start: 13;
     grid-column-start: 1;
     grid-row-end: 20;
     grid-column-end: 8;
+    border-bottom-left-radius: 20px;
 }
 .img11{
-    grid-row-start: 14;
+    grid-row-start: 13;
     grid-column-start: 8;
     grid-row-end: 18;
     grid-column-end:14;
+    border-bottom-right-radius: 20px;
+}
+.mainNaw nav li:hover {
+    cursor: pointer;
+}
+.topMenu a{
+    display: block;
+    width:100%;
 }
 
-.topMenu a{
+.mainNaw .submenu{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+.mainNaw nav ul li:hover >ul, ul li ul :hover{
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+.mainNaw .submenu li{
+    clear: both;
+    width:100%;
+    color: #fff;
+    margin-top: -15%;
+    opacity: 0.5;
+    float: left;
+    padding: 1rem;
+    text-decoration: none;
+}
+.mainNaw .submenu li:hover{
+    color:white;
+    opacity:1;
+}
+
+.mainNaw .topMenu a{
     text-decoration: none;
     color:silver;
     display: block;
-    margin-top: 15%;
-    margin-bottom: 5%;
+
 }
 .topMenu li{
     list-style: none;
 }
-.submenu {
-    visibility: hidden;
-    opacity: 1;
+.submenu{
+    display: none;
     text-decoration: none;
 }
-.topMenu li {
-    margin-bottom: 15%;
-}
-.topMenu{
-    margin-bottom: 5%;
-}
 .topMenu li:hover .submenu {
-    visibility: visible;
-    opacity: 1;
-    margin-left:-15%;
+    display:block;
+    position:absolute;
     transition:1s linear;
+    z-index: 1000;
+    margin-left: -1%;
+    text-decoration: none;
+    color:silver;
 }
+.mainNaw div{
+    margin-right: 5%;
+}
+
 .pageFooter{
     text-align: center;
 }
@@ -216,9 +317,3 @@ header,footer,article,nav,div{
     margin-left:5%;
 }
 .mainArticle::-webkit-scrollbar { width: 8px;}
-.mainArticle::-webkit-scrollbar-button {  background-color: #666; }
-.mainArticle::-webkit-scrollbar-track {  background-color: #999;}
-.mainArticle::-webkit-scrollbar-track-piece { background-color: #ffffff ;}
-.mainArticle::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
-.mainArticle::-webkit-scrollbar-corner { background-color: #999;}
-.mainArticle::-webkit-resizer { background-color: #666;}
