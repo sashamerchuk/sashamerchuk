@@ -5,7 +5,6 @@ body{
     background:linear-gradient(90deg,black 30%,darkred);
     text-align: center;
 }
-
 header,footer,article,nav{
     text-decoration: none;
     color:silver;
