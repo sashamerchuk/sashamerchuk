@@ -16,4 +16,9 @@
     header{
         margin-bottom: -10%;
     }
+
+    .mainNaw .submenu li{
+        margin-left: 90%;
+        margin-top: -15%;
+    }
 }
