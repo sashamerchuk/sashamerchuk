@@ -113,7 +113,6 @@ header nav ul li:hover >ul, ul li ul :hover{
     position:absolute;
     transition:1s linear;
     z-index: 1000;
-    margin-left: 10%;
     text-decoration: none;
     color:silver;
 }
@@ -161,22 +160,21 @@ header nav ul li:hover >ul, ul li ul :hover{
     grid-template-rows:repeat(11,5vw);
     grid-template-columns:repeat(11, 1fr);
     grid-auto-flow: dense;
-    margin:0;
-    padding: 0;
     grid-gap: 0;
-    height:78.5vh;
-    border-radius: 20px;
+    height:75vh;
+    padding-left:5%;
+    padding-right:5%;
 }
 .mainArticle img{
     width:100%;
     margin:0;
-    padding: 0%;
 }
 .img1{
     grid-row-start: 1;
     grid-column-start: 1;
     grid-row-end: 11;
     grid-column-end: 5;
+    border-top-left-radius: 20px;
 }
 .img2{
     grid-row-start: 1;
@@ -189,6 +187,7 @@ header nav ul li:hover >ul, ul li ul :hover{
     grid-column-start: 8;
     grid-row-end: 4;
     grid-column-end:13 ;
+    border-top-right-radius: 20px;
 }
 .img4{
     grid-row-start :3;
@@ -229,9 +228,10 @@ header nav ul li:hover >ul, ul li ul :hover{
 .img10{
     grid-row-start: 13;
     grid-column-start: 1;
-    grid-row-end: 20;
+    grid-row-end: 19;
     grid-column-end: 8;
     border-bottom-left-radius: 20px;
+    height:545px;
 }
 .img11{
     grid-row-start: 13;
@@ -239,68 +239,6 @@ header nav ul li:hover >ul, ul li ul :hover{
     grid-row-end: 18;
     grid-column-end:14;
     border-bottom-right-radius: 20px;
-}
-.mainNaw nav li:hover {
-    cursor: pointer;
-}
-.topMenu a{
-    display: block;
-    width:100%;
-}
-
-.mainNaw .submenu{
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
-}
-.mainNaw nav ul li:hover >ul, ul li ul :hover{
-    visibility: visible;
-    opacity: 1;
-    display: block;
-}
-.mainNaw .submenu li{
-    clear: both;
-    width:100%;
-    color: #fff;
-    margin-top: -15%;
-    opacity: 0.5;
-    float: left;
-    padding: 1rem;
-    text-decoration: none;
-}
-.mainNaw .submenu li:hover{
-    color:white;
-    opacity:1;
-}
-
-.mainNaw .topMenu a{
-    text-decoration: none;
-    color:silver;
-    display: block;
-
-}
-.topMenu li{
-    list-style: none;
-}
-.submenu{
-    display: none;
-    text-decoration: none;
-}
-.topMenu li:hover .submenu {
-    display:block;
-    position:absolute;
-    transition:1s linear;
-    z-index: 1000;
-    margin-left: -1%;
-    text-decoration: none;
-    color:silver;
-}
-.mainNaw div{
-    margin-right: 5%;
 }
 
 .pageFooter{
@@ -315,4 +253,15 @@ header nav ul li:hover >ul, ul li ul :hover{
     height:30px;
     margin-left:5%;
 }
-.mainArticle::-webkit-scrollbar { width: 8px;}
+.mainArticle::-webkit-scrollbar { width: 0;}
+.back{
+ color:silver;
+}
+.flexChild{
+    margin-right: 0;
+    margin-left:5%;
+    width:20%;
+}
+.flexChild1 li{
+    width:200px;
+}
