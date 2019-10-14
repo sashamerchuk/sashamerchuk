@@ -1,0 +1,10 @@
+@media screen and (max-width: 1000px){
+    .flexParentVideo{
+        flex-flow: column;
+    }
+    .innerVideo{
+        width:100%;
+        height:300px;
+    }
+
+}

@@ -2,32 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tours</title>
-    <link rel="stylesheet" href="tours.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Venue</title>
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="adaptive/indexAd.css">
+    <link rel="stylesheet" href="concertVenue.css">
 </head>
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light back flexParent">
         <div class="flexChild"><p class="logo">Rihanna</p></div>
-        <div class="flexChild1"><button class=" bg-light navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="flexChild1"><button class=" bg-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-            <div class="collapse navbar-collapse" id="menu">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" style="color:silver;">HOME</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="news.html" style="color:silver;">NEWS</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color:silver;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             FOR FANS
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color:silver;">
+                            <a class="dropdown-item" href="tours.html">Tours</a>
+                            <a class="dropdown-item" href="news.html">News</a>
                             <a class="dropdown-item" href="video.html">Video</a>
                             <a class="dropdown-item" href="fragrance.html">Fragrance</a>
                             <a class="dropdown-item" href="#">Shop</a>
@@ -37,10 +39,10 @@
                         <a class="nav-link" href="fansAppeal.html" style="color:silver;">FANS APPEAL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="concertVenue.html" style="color:silver;">CONCERT VENUE</a>
+                        <a class="nav-link" href="#" style="color:silver;">CONCERT VENUE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" style="color:silver;">ADMIN</a>
+                        <a class="nav-link" href="admin.html" style="color:silver;">ADMIN</a>
                     </li>
                 </ul>
             </div>
@@ -48,9 +50,31 @@
     </nav>
 </header>
 <main>
+    <section class="section">
+        <h2 class="section-heading h1 pt-4 mb-5">Contact us</h2>
+        <div class="card">
+            <div class="card-body">
+                <div id="map-container-google-12" class="z-depth-1-half map-container-7" style="height: 200px">
+                    <iframe src="https://maps.google.com/maps?q=Miami&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                            style="border:0" allowfullscreen></iframe>
+                </div>
+                    <div class="col-md-8" style=" margin:0 auto; margin-top:1%;">
+                        <div class="md-form primary-textarea">
+                            <textarea id="contact-message" class="md-textarea form-control mb-0" rows="6"
+                                      style="padding-bottom: 1.2rem;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <a class="btn btn-mdb-color" href="#" style="color:red;">BUY A TICKET NOW!!!</a>
+                        </div>
+                    </div>
+            </div>
 
+        </div>
+
+    </section>
 </main>
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

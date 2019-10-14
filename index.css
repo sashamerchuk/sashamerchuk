@@ -29,13 +29,12 @@ header .container-fluid{
 }
 @keyframes logo {
     from{
-        margin-left:-25%;
+        transform:translateX(-15%);
     }
     to{
-        margin-left: 5%;
+        transform:translateX(0);
     }
 }
-
 header nav{
     background: none;
     align-items: baseline;
@@ -257,11 +256,32 @@ header nav ul li:hover >ul, ul li ul :hover{
 .back{
  color:silver;
 }
+.flexParent{
+    display:flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
 .flexChild{
     margin-right: 0;
-    margin-left:5%;
+    margin-left:0;
     width:20%;
 }
 .flexChild1 li{
     width:200px;
+}
+.mainArticle img:hover {
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+    transform: scale(1.1);
+}
+.pageFooter img:hover{
+    transition-duration:1s;
+    transform: scale(2);
+}
+.dropdown:hover>.dropdown-menu {
+    transition: 1s linear;
+    display: block;
+    color:white;
+    background-color:silver;
+    margin-left:10%;
 }

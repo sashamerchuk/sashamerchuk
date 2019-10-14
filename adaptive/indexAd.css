@@ -1,6 +1,11 @@
 @media screen and (max-width: 600px){
+    body{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
     .mainArticle{
         height:53vh;
+        margin-bottom: 10%;
     }
     .mainNaw{
         text-align: center;
@@ -13,6 +18,14 @@
     .mainNaw div{
         margin-right: 0%;
     }
-
+    .img10{
+        height:137px;
+    }
+    .flexParent{
+        flex-flow: column;
+    }
+    .flexChild {
+        width: 100%;
+    }
 
 }

@@ -1,0 +1,16 @@
+@media screen and (max-width: 1000px){
+    main .news{
+        flex-flow:column;
+        padding-right: 0;
+        padding-left:20%;
+        text-align: center;
+        margin:0 auto;
+        font-size: 10px;
+    }
+    .childFlex{
+        width:60% !important;
+        padding:0;
+        margin:0;
+        overflow: scroll;
+    }
+}

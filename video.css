@@ -8,7 +8,6 @@ body{
 header {
     padding: 10px;
     background:linear-gradient(90deg,black 30%,darkred);
-    font-size: 30px;
     text-align: center;
 }
 .menu nav{
@@ -21,8 +20,7 @@ header {
     margin-right:10%;
 }
 .menu a:hover{
-    font-size: 20px;
-    box-shadow: 0 0 10px 0px darkblue;
+    color:blue;
     transition: all  linear;
     transition-duration: 0.3s;
 
@@ -48,9 +46,9 @@ header {
     font-size: 25px;
     text-align: center;
 }
-.flexParent{
+.flexParentVideo{
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left:10%;
     padding-right:10%;
     flex-flow:row wrap;
@@ -63,6 +61,11 @@ header {
     width:30%;
     height:200px;
     margin-bottom: 5%;
+}
+.innerVideo:hover{
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+    transform: scale(1.5);
 }
 .overView{
     display:none;
@@ -140,10 +143,10 @@ header {
 }
 @keyframes logo {
     from{
-        margin-left:-20%;
+       transform:translate(-15%);
     }
     to{
-        margin-left: 5%;
+        transform: translate(0);
     }
 }
 
@@ -155,13 +158,6 @@ header {
     color:silver;
     text-align: center;
     margin-right:10%;
-}
-.menu a:hover{
-    font-size: 20px;
-    box-shadow: 0 0 10px 0px darkblue;
-    transition: all  linear;
-    transition-duration: 0.3s;
-
 }
 .menu{
     display: flex;
@@ -184,14 +180,6 @@ header {
     margin-right:10%;
 }
 
-.menu a:hover{
-    font-size: 30px;
-    box-shadow: 0 0 10px 0px darkblue;
-    border-radius: 100%;
-    transition: all  linear;
-    transition-duration: 0.3s;
-
-}
 .menu{
     display: flex;
     justify-content: center;
@@ -277,3 +265,28 @@ header {
     font-size: 25px;
     text-align: center;
 }
+.flexChild10{
+    margin-right: 0;
+    margin-left:0;
+    width:20%;
+}
+.flexChild1 li{
+    width:200px;
+}
+.mainArticle img:hover {
+    transition-duration: 1s;
+    transition-delay: 0.2s;
+    transform: scale(1.1);
+}
+.pageFooter img:hover{
+    transition-duration:1s;
+    transform: scale(2);
+}
+.dropdown:hover>.dropdown-menu {
+    transition: 1s linear;
+    display: block;
+    color:white;
+    background-color:silver;
+    margin-left:10%;
+}
+
