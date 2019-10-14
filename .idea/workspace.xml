@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d801f51-e5f9-4f0c-9450-48d3ad3b882d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/concertVenue.html" beforeDir="false" afterPath="$PROJECT_DIR$/concertVenue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fansAppeal.html" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fragrance.html" beforeDir="false" afterPath="$PROJECT_DIR$/fragrance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tours.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tours.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/topMusic.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/topMusic.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
       <workItem from="1570661215490" duration="3626000" />
       <workItem from="1570694928281" duration="5715000" />
       <workItem from="1571060491395" duration="57000" />
-      <workItem from="1571069720316" duration="18200000" />
+      <workItem from="1571069720316" duration="18449000" />
     </task>
     <servers />
   </component>
