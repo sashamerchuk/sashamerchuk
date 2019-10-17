@@ -1,0 +1,27 @@
+@media screen and (max-width: 1000px){
+   .fragranceFlex{
+        flex-flow:row wrap;
+        text-align: center;
+        margin:0 auto;
+        font-size: 10px;
+        padding-left:2%;
+        padding-right: 2%;
+    }
+    .flexChild{
+        width:30%;
+    }
+}
+@media screen and (max-width: 600px){
+    .fragranceFlex{
+        flex-flow:column;
+        text-align: center;
+        margin:0 auto;
+        font-size: 10px;
+        padding-left:5%;
+        padding-right: 5%;
+    }
+    .flexChild{
+        width:90% !important;
+        padding:3%;
+    }
+}

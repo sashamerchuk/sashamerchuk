@@ -153,17 +153,12 @@ header{
     display:flex;
     justify-content: space-between;
     flex-flow:row wrap;
-    padding-left:10%;
-    padding-right:10%;
+    padding:3%;
 }
 .childFlex{
-    width:38%;
-    height:400px;
+    width:30%;
     margin-top: 3%;
-    margin-left: 10%;
     margin-bottom: 3%;
-    padding-right:2%;
-    overflow: scroll;
 }
 .critica{
     float:left;

@@ -68,34 +68,12 @@ header .container-fluid{
     background-color:silver;
     margin-left:10%;
 }
-
-.map-responsive{
-    padding:3%;
+.text{
+    text-align: center;
+    font-size:80px;
+    opacity:0.7;
 }
-.map-responsive iframe{
-    border-radius:20px;
-    box-shadow:0 0 3px black;
-    width:80%;
-}
-.map-container-7{
-    padding-bottom:30%;
-    position:relative;
-    height:0;
-}
-.map-container-7 iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
-    border-radius:20px;
-    box-shadow:0 0 3px black;
-}
-.text-center{
-    background-color:silver;
-    width:200px;
-    margin:0 auto;
-    border-radius: 20px;
-    margin-top:0.5%;
-    box-shadow: 0 0 0 1px darkblue;
+.tbData{
+    padding:10%;
+    padding-top:3%;
 }
