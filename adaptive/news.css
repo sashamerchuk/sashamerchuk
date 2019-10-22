@@ -9,12 +9,11 @@
     }
     .childFlex{
         width:45% !important;
-        overflow: scroll;
     }
 }
 @media screen and (min-width: 100px) and (max-width: 600px){
     main .news{
-        flex-flow:row wrap;
+        flex-flow:column;
         text-align: center;
         margin:0 auto;
         font-size: 10px;

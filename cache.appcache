@@ -1,0 +1,18 @@
+CACHE MANIFEST
+
+CACHE:
+index.html
+index.css
+error.html
+admin.html
+concertVenue.html
+fansAppeal.html
+fragrance.html
+news.html
+
+
+NETWORK:
+*
+FALLBACK:
+/ offline.html
+

@@ -180,7 +180,7 @@ header{
 }
 .childFlex::-webkit-scrollbar { width: 0;}
 
-.flexParent{
+.flexParent1{
     display:flex;
     justify-content: space-between;
     flex-flow: row wrap;
