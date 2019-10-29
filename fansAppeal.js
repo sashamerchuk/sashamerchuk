@@ -1,59 +1,92 @@
+document.getElementById("sendButton").addEventListener("click", addAppeal);
+window.addEventListener("online", function (event) {
+    const allAppeals = readAppealsFromLocalStorage();
+    sendAppealsToServer(allAppeals);
+    showAllAppeals(allAppeals);
+    localStorage.removeItem("appeals");
+});
 
+const allAppeals = readAppealsFromLocalStorage();
+if (isOnline()) {
+    sendAppealsToServer(allAppeals);
+    showAllAppeals(allAppeals);
+    localStorage.removeItem("appeals");
+}
 
-let appeal = document.getElementsByClassName('container2');
-let text=document.getElementById('contact-message');
-let data=document.getElementsByClassName('data');
-let name=document.getElementsByClassName('name');
-let fullName=document.getElementsByClassName('fullName');
-let textArea=document.getElementsByTagName("textarea");
-temp_date = new Date();
-day = temp_date.getDate();
-month = temp_date.getMonth() + 1;
-year = temp_date.getFullYear();
-function handlerText(){
-    if(text.value===''){
-        console.log(textArea);
-        textArea[1].style.boxShadow='0 0 0 1px red';
-        return  alert("Enter your Appeal");
-    }else if(textArea[0].value===''){
-        textArea[0].style.boxShadow='0 0 0 1px red';
-        textArea[1].style.marginTop='20px';
-        return  alert("Enter your Name");
+function addAppeal() {
+    const commentText = document.getElementById("commentSection").value.trim();
+    if (commentText === "") {
+        alert("Enter text in comment section!");
+        document.getElementById("sendButton").blur();
+        return;
     }
-    else {
-        appeal[0].innerHTML = text.value;
-        console.log(name[0].value);
-        data[0].innerHTML = day + "." + month + "." + year;
-        fullName[0].innerHTML = name[0].value;
+    const nickname = prompt("Enter your nickname: ", "User").trim();
+    if (nickname === "" || nickname == null) {
+        alert("Nickname is incorrect!");
+        document.getElementById("sendButton").blur();
+        return;
+    }
+    const time = new Date();
+
+    if (isOnline()) {
+        showAppeal(nickname, time, commentText);
+        alert("Successfully sent to server");
+    } else {
+        allAppeals.push({name: nickname, time: time, text: commentText});
+        saveAppealsToLocalStorage(allAppeals);
+        alert("Saved to local storage");
+    }
+
+    document.getElementById("sendButton").blur();
+    document.getElementById("commentSection").value = "";
+}
+
+function showAppeal(name, time, text) {
+    const commentBlock = document.createElement("div");
+    commentBlock.className = "col-sm-3";
+    const userInfo = document.createElement("div");
+    userInfo.className = "container1";
+    const img = document.createElement('img');
+    const comment = document.createElement("div");
+    comment.className = "col-sm-9 ";
+
+
+    userInfo.innerHTML = "<p>" + name + "</p>" + "<p>" + time.getHours() + ":"
+        + (time.getMinutes() < 10 ? "0" : "") + time.getMinutes()
+        + "</p>" + "<p>" + time.getDate() + "." + (time.getMonth() + 1) + "." + time.getFullYear() + "</p>";
+    comment.innerHTML = "<p>" + text + "</p>";
+    let insert = document.getElementsByClassName('insert');
+    commentBlock.appendChild(userInfo);
+    const parent = document.getElementById('row');
+    parent.insertBefore(commentBlock,insert[0]);
+    parent.insertBefore(comment,insert[0]);
+}
+
+function showAllAppeals(allAppeals) {
+    allAppeals.forEach(function (appeal) {
+        showAppeal(appeal.name, new Date(appeal.time), appeal.text)
+    });
+}
+
+function sendAppealsToServer(allAppeals) {
+    if (allAppeals.length) {
+        alert("Successfully sent to server!")
     }
 }
-// function handlerText1(){
-//     let parentdiv=document.getElementsByClassName('row');
-//     let div = document.createElement('div');
-//     let divCont = document.createElement('div');
-//     let p = document.createElement('p');
-//     let img=document.createElement('img');
-//     let p1=document.createElement('p');
-//     let div2=document.createElement('div');
-//     let div21=document.createElement('div');
-//     let p2=document.createElement('p');
-//     p2.innerHTML=appeal[0].innerHTML=text.value;
-//     div21.className='container2';
-//     div2.className='col-sm-9';
-//     divCont.className='container1';
-//     div.className='col-sm-3';
-//     p.innerHTML=fullName[0].innerHTML=name[0].value;
-//     p1.className='data';
-//     p1.innerHTML=day + "." + month + "." + year;
-//     img.src='foto/rihannaVogue.jpg';
-//     img.className='rihanna';
-//     div.append(divCont);
-//     divCont.append(img);
-//     divCont.append(p);
-//     divCont.append(p1);
-//     div2.append(div21);
-//     div21.append(p2);
-//     parentdiv[0].prepend(div2);
-//     parentdiv[0].prepend(div);
-//
-// }
+
+function saveAppealsToLocalStorage(allAppeals) {
+    localStorage.setItem("appeals", JSON.stringify(allAppeals));
+}
+
+function readAppealsFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("appeals")) != null
+        ? JSON.parse(localStorage.getItem("appeals")) : [];
+}
+
+String.prototype.trim = function () {
+    return this.replace(/^\s+|\s+$/g, "");
+};
+
+function isOnline() {
+    return window.navigator.onLine;
+}

@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d801f51-e5f9-4f0c-9450-48d3ad3b882d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache.appcache" beforeDir="false" afterPath="$PROJECT_DIR$/cache.appcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fansAppeal.css" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fansAppeal.html" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fansAppeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +36,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javascript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../9. Web Storage" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -90,6 +97,14 @@
       <workItem from="1571386189752" duration="1021000" />
       <workItem from="1571475216810" duration="68000" />
       <workItem from="1571741114507" duration="16415000" />
+      <workItem from="1571772438183" duration="647000" />
+      <workItem from="1571816040724" duration="3523000" />
+      <workItem from="1571822156393" duration="1951000" />
+      <workItem from="1571838876529" duration="4644000" />
+      <workItem from="1571864078649" duration="1021000" />
+      <workItem from="1572274426390" duration="734000" />
+      <workItem from="1572277585093" duration="15289000" />
+      <workItem from="1572345790417" duration="314000" />
     </task>
     <servers />
   </component>

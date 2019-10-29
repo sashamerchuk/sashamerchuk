@@ -49,12 +49,12 @@
 </header>
 <main>
 <div class="container-fluid">
-    <div class="row">
+    <div id='row' class="row">
         <div class="container-fluid hr1"></div>
-        <div class="col-sm-3">
+        <div class="col-sm-3 insert">
     <div class="container1">
         <img src="foto/rihannaVogue.jpg" class="rihanna">
-        <p class="fullName"></p>
+        <p class="fullName">Rihanna Rihanovna</p>
         <p class="data"></p>
     </div>
         </div>
@@ -82,16 +82,13 @@
 
         <div class="col-sm-12" style="margin:0 auto;">
             <div class="md-form primary-textarea">
-
-                 <textarea  class="md-textarea form-control mb-0 name" rows="1"
-                           style="padding-bottom: 1.2rem;">Your name</textarea>
-                            <textarea id="contact-message" class="md-textarea form-control mb-0" rows="5"
+                            <textarea id="commentSection" class="md-textarea form-control mb-0" rows="5"
                                       style="padding-bottom: 1.2rem;">Write an appeal...</textarea>
             </div>
         </div>
         <div class="col-sm-12">
             <div class="text-center">
-                <a class="btn btn-mdb-color" href="#" style="color:red;" onclick={handlerText()}>SEND</a>
+                <a class="btn btn-mdb-color" href="#" id="sendButton" style="color:red;">SEND</a>
             </div>
         </div>
     </div>
