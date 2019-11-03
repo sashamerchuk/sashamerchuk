@@ -1,29 +1,67 @@
-let textArea = document.getElementsByTagName('textarea');
-let input = document.getElementsByClassName('input');
-let containerFoto = document.getElementsByClassName('imgContainer');
-function add_news(){
-    containerFoto[0].src=input[0].files;
-    console.log(input[0].value);
-    if (textArea[0].value==''){
-        alert('Enter your title!!!');
-        textArea[0].style.boxShadow='0 0 0 1px red';
-    }else {
-        textArea[0].style.boxShadow='0 0 0 0 black';
+document.getElementById('addImageButton').addEventListener('click',addImage);
+document.getElementById('sendNewsButton').addEventListener('click',sendNews);
+
+window.addEventListener('online',function(event){
+    const allNews = data_context.get_lists();
+    sendNewsToServer(allNews);
+    localStorage.removeItem('news');
+});
+
+const allNews= data_context.get_lists();
+
+function addImage(){
+    const input = document.querySelector('input[type=file]');
+    const uploadedImage=document.getElementById('uploadedImage');
+    if(input.files[0]!=null){
+        uploadedImage.setAttribute('src',window.URL.createObjectURL(input.files[0]));
     }
-     if(textArea[1].value=='') {
-         alert("Enter the text please!!!");
-         textArea[1].style.boxShadow = '0 0 0 1px red';
-     }else{
-         textArea[1].style.boxShadow='0 0 0 0 black';
-     }
-     if(textArea[0].value && textArea[1].value && input[0].value){
-         textArea[0].value='';
-         textArea[1].value='';
-         input[0].value='';
-         alert('Your news succesfully added!');
-     }else{
-         alert('add the image');
-     }
-
-
+    document.getElementById('addImageButton').blur();
 }
+
+function sendNews() {
+    let newsImageSrc, newsTitle, newsBody;
+
+    newsImageSrc = document.getElementById("uploadedImage").getAttribute("src");
+    newsTitle = document.getElementById("newsTitle").value.trim();
+    if (newsTitle === "" || newsTitle == null) {
+        alert("News title is incorrect!");
+        document.getElementById("sendNewsButton").blur();
+        return;
+    }
+    newsBody = document.getElementById("newsBody").value.trim();
+    if (newsBody === "" || newsBody == null) {
+        alert("News body is incorrect!");
+        document.getElementById("sendNewsButton").blur();
+        return;
+    }
+
+    if (isOnline()) {
+        alert("Successfully send to server");
+    } else {
+        allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
+        data_context.add_list(allNews);
+        alert("Saved to local storage");
+    }
+
+    document.getElementById("newsTitle").value = "";
+    document.getElementById("newsBody").value = "";
+    document.getElementById("sendNewsButton").blur();
+}
+    function sendNewsToServer(allNews) {
+        if (allNews.length) {
+            alert("Successfully sent to server!")
+        }
+    }
+
+    function saveNewsToLocalStorage(allNews) {
+        localStorage.setItem("news", JSON.stringify(allNews));
+    }
+
+    function readNewsFromLocalStorage() {
+        return JSON.parse(localStorage.getItem("news")) != null
+            ? JSON.parse(localStorage.getItem("news")) : [];
+    }
+
+    function isOnline() {
+        return window.navigator.onLine;
+    }

@@ -1,19 +1,19 @@
-document.getElementById("sendButton").addEventListener("click", addAppeal);
+let listsArr=[];
+document.getElementById("sendButton").addEventListener("click", openIndexedDB);
 window.addEventListener("online", function (event) {
-    const allAppeals = data_context.get_lists();
-    // sendAppealsToServer(allAppeals);
-    showAllAppeals(allAppeals);
-});
-
-const allAppeals = data_context.get_lists();
-
-if (isOnline()) {
-    // sendAppealsToServer(allAppeals);
+    const allAppeals = readAppealsFromLocalStorage();
+    sendAppealsToServer(allAppeals);
     showAllAppeals(allAppeals);
     localStorage.removeItem("appeals");
-}
+});
 
-function addAppeal() {
+function init(){
+    data_context.get_lists((result)=>{
+        listsArr=result;
+        createDiv(listsArr);
+    });
+}
+function createDiv(listsArr){
     const commentText = document.getElementById("commentSection").value.trim();
     if (commentText === "") {
         alert("Enter text in comment section!");
@@ -30,19 +30,17 @@ function addAppeal() {
 
     if (isOnline()) {
         showAppeal(nickname, time, commentText);
-        allAppeals.push({name: nickname, time: time, text: commentText});
         alert("Successfully sent to server");
     } else {
         allAppeals.push({name: nickname, time: time, text: commentText});
-        data_context.add_list(allAppeals);
         console.log(allAppeals);
+        data_context.add_list(allAppeals);
         alert("Saved to local storage");
     }
 
     document.getElementById("sendButton").blur();
     document.getElementById("commentSection").value = "";
 }
-
 function showAppeal(name, time, text) {
     const commentBlock = document.createElement("div");
     commentBlock.className = "col-sm-3";
@@ -65,32 +63,42 @@ function showAppeal(name, time, text) {
     parent.insertBefore(comment,insert[0]);
 }
 
+
 function showAllAppeals(allAppeals) {
-    console.log(allAppeals);
+    data_context.get_lists()
     allAppeals.forEach(function (appeal) {
         showAppeal(appeal.name, new Date(appeal.time), appeal.text)
     });
 }
-//
-// function sendAppealsToServer(allAppeals) {
-//     if (allAppeals.length) {
-//         alert("Successfully sent to server!")
-//     }
-// }
-
-function saveAppealsToLocalStorage(allAppeals) {
-    localStorage.setItem("appeals", JSON.stringify(allAppeals));
-}
-
+const allAppeals = readAppealsFromLocalStorage();
 function readAppealsFromLocalStorage() {
     return JSON.parse(localStorage.getItem("appeals")) != null
         ? JSON.parse(localStorage.getItem("appeals")) : [];
 }
 
-String.prototype.trim = function () {
-    return this.replace(/^\s+|\s+$/g, "");
-};
 
-function isOnline() {
-    return window.navigator.onLine;
+function openIndexedDB(){
+
+    //open a connection to the datastore
+    var openRequest = indexedDB.open('todoDatabase', 4);
+    // handle datastore upgrades.
+    openRequest.onupgradeneeded = function(event) {
+        console.log("Upgrading...");
+        var db = event.target.result;
+        var objectStore = db.createObjectStore("todo", {keyPath: "title"});
+        console.log(db);
+
+    }
+
+    // handle successful datastore access.
+    openRequest.onsuccess = function(event) {
+        console.log("Success!");
+        db = event.target.result;
+        init();
+    }
+
+    openRequest.onerror = function(event) {
+        console.log("Error");
+    }
+
 }

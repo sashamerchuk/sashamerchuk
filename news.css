@@ -159,6 +159,8 @@ header{
     width:30%;
     margin-top: 3%;
     margin-bottom: 3%;
+    overflow:scroll;
+    height:300px;
 }
 .critica{
     float:left;

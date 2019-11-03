@@ -23,6 +23,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html" style="color:silver;">HOME</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html" style="color:silver;">NEWS</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" style="color:silver;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             FOR FANS
@@ -51,11 +54,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4">
-            <input class="input" type="file" name="image" accept="image/jpg/png">
+            <input id='addImageButton' class="input" type="file" name="image" accept="image/jpg/png">
+
             </div>
             <div class="col-sm-8">
                 <div class="container1">
-                    <img src="" class="imgContainer">
+                    <img id="uploadedImage" class="uploadImg" src="foto/rihannaVogue.jpg" alt="New Image">
                 </div>
             </div>
         </div>
@@ -63,20 +67,20 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="input">
-                <a class="btn btn-mdb-color" href="#" style="color:red;" onclick={add_news()}>SEND</a>
+                <a id='sendNewsButton' class="btn btn-mdb-color" href="#" style="color:red;">SEND</a>
             </div>
             </div>
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-12">
                 <div class="md-form primary-textarea textContainer">
-                            <textarea id="contact-message" class="md-textarea form-control mb-0" rows="1"
+                            <textarea id="newsTitle" class="md-textarea form-control mb-0" rows="1"
                                       style="padding-bottom: 1.2rem;">News title</textarea>
                 </div>
                     </div>
                     <div class="col-sm-12">
                         <div class="md-form primary-textarea textContainer1">
-                            <textarea class="md-textarea form-control mb-0" rows="5"
+                            <textarea id='newsBody' class="md-textarea form-control mb-0" rows="5"
                                       style="padding-bottom: 1.2rem;">News Body</textarea>
                         </div>
                     </div>
@@ -85,6 +89,7 @@
         </div>
     </div>
 </main>
+<script src="adminDB.js"></script>
 <script src="admin.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
