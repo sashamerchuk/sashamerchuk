@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d801f51-e5f9-4f0c-9450-48d3ad3b882d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fanAppeal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fansAppeal.html" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fansAppeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.css" beforeDir="false" afterPath="$PROJECT_DIR$/news.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminDB.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +104,9 @@
       <workItem from="1572539525837" duration="4767000" />
       <workItem from="1572596337478" duration="2222000" />
       <workItem from="1572695295484" duration="26909000" />
+      <workItem from="1572775459970" duration="19917000" />
+      <workItem from="1572809376715" duration="323000" />
+      <workItem from="1572970055014" duration="1566000" />
     </task>
     <servers />
   </component>

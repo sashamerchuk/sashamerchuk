@@ -1,5 +1,5 @@
 let useLocalStorage = false;
-
+var db;
 var LocalStorageDataProvider = function(){};
 
 //Save TODO Lists in the Localstorage by reading values entered in the UI
@@ -14,8 +14,9 @@ LocalStorageDataProvider.prototype.get_lists = function(callback) {
 };
 
 var IndexedDBDataProvider = function(){};
-IndexedDBDataProvider.prototype.add_key = function(){
-    let db, openRequest= indexedDB.open('Fans Appeal',1);
+
+function openIndexedDB(){
+    let  openRequest= indexedDB.open('Fans Appeal',1);
     openRequest.onupgradeneeded=function(e){
         console.log("Upgradding ...");
         let thisDB= e.target.result;
@@ -23,44 +24,45 @@ IndexedDBDataProvider.prototype.add_key = function(){
             thisDB.createObjectStore('people',{autoIncrement:true});
         }
     };
-    openRequest.onsuccess=function(e){
-        console.log("OK!");
-        db=e.target.result;
-        let transaction= db.transaction(['people'],'readwrite');
-        let store =transaction.objectStore('people');
-        let commentSection = document.getElementById('commentSection').value;
-        let person = {
-            comment:commentSection,
-            date: new Date()
-        };
-        let request = store.add(person);
-        request.onerror = function(e){
-            console.log('erroe')
-        };
-        request.onsuccess=function (e) {
-            console.log("Ycpex");
-        };
-
+    openRequest.onsuccess = function(event) {
+        console.log("Success!");
+        db = event.target.result;
+        console.log("d is ",db);
+    }
+}
+IndexedDBDataProvider.prototype.add_key = function(allAppeal){
+    let transaction = db.transaction(['people'],'readwrite');
+    let store = transaction.objectStore('people');
+    let request = store.add(allAppeal);
+    request.onerror=function(e){
+        console.log('Eror',e.target.error.name)
     };
+    request.onsuccess=function (e) {
+        console.log("You did it");
+    }
 };
 IndexedDBDataProvider.prototype.get_lists = function() {
-    let db, openRequest = indexedDB.open('Fans Appeal', 1);
-    openRequest.onsuccess = function (e) {
-        console.log("OK!");
-        db = e.target.result;
-        let transaction = db.transaction(['people'], 'readwrite');
-        let store = transaction.objectStore('people');
-        var customers = [];
-        store.openCursor().onsuccess = function (event) {
-            var cursor = event.target.result;
-            if (cursor) {
-                customers.push(cursor.value.comment);
-                cursor.continue();
-            } else {
-                console.log("Got all customers: " + customers[0]);
-            }
-        };
-    };
+    let db,openRequest = indexedDB.open('Fans Appeal',1);
+    let customers = [];
+    openRequest.onsuccess = function(event) {
+        console.log("Success!");
+        db = event.target.result;
+        console.log("khgdjskjf",db);
+        let transaction = db.transaction('people','readonly');
+        let objectStore = transaction.objectStore('people');
+       objectStore.openCursor().onsuccess=function(event){
+           let cursor = event.target.result;
+           if(cursor){
+               customers.push(cursor.value);
+               cursor.continue();
+           }else{
+               console.log("Got all customers " , customers);
+           }
+       }
+    }
+    console.log('customers',customers);
+    return customers;
+
 };
 
 var DAL = function(){

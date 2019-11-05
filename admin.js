@@ -1,12 +1,14 @@
+
 document.getElementById('addImageButton').addEventListener('click',addImage);
 document.getElementById('sendNewsButton').addEventListener('click',sendNews);
-
+document.addEventListener("DOMContentLoaded", openIndexedDB, false);
 window.addEventListener('online',function(event){
     const allNews = data_context.get_lists();
     sendNewsToServer(allNews);
-    localStorage.removeItem('news');
+    if(isOnline()){
+    localStorage.removeItem('appeals');
+    }
 });
-
 const allNews= data_context.get_lists();
 
 function addImage(){
@@ -38,9 +40,20 @@ function sendNews() {
     if (isOnline()) {
         alert("Successfully send to server");
     } else {
-        allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
-        data_context.add_list(allNews);
-        alert("Saved to local storage");
+        if(useLocalStorage){
+            allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
+            data_context.add_list(allNews);
+            alert("Saved to local storage");
+        }
+        else{
+            let person = {
+                imgSrc:newsImageSrc,
+                title:newsTitle,
+                body:newsBody
+            };
+            data_context.add_list(person);
+            alert("Saved to indexed db");
+        }
     }
 
     document.getElementById("newsTitle").value = "";
@@ -48,7 +61,7 @@ function sendNews() {
     document.getElementById("sendNewsButton").blur();
 }
     function sendNewsToServer(allNews) {
-        if (allNews.length) {
+        if (allNews) {
             alert("Successfully sent to server!")
         }
     }
