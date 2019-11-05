@@ -13,58 +13,47 @@ LocalStorageDataProvider.prototype.get_lists = function(callback) {
         ? JSON.parse(localStorage.getItem("appeals")) : [];
 };
 
-var IndexedDBDataProvider = function(){};
-
-function openIndexedDB(){
-    let  openRequest= indexedDB.open('Fans Appeal',1);
-    openRequest.onupgradeneeded=function(e){
-        console.log("Upgradding ...");
-        let thisDB= e.target.result;
-        if(!thisDB.objectStoreNames.contains('people')){
-            thisDB.createObjectStore('people',{autoIncrement:true});
+var IndexedDBDataProvider = function(){
+    this.ready = new Promise((resolve,reject)=>{
+        var request = window.indexedDB.open("Fans Appeal",4);
+        request.onupgradeneeded= e =>{
+            this.db = e.target.result;
+            this.db.createObjectStore('Fans Appeal');
+        };
+        request.onsuccess=(e)=>{
+            this.db = e.target.result;
+            resolve();
+        };
+        request.onerror= e =>{
+            this.db = e.target.result;
+            reject(e);
         }
-    };
-    openRequest.onsuccess = function(event) {
-        console.log("Success!");
-        db = event.target.result;
-        console.log("d is ",db);
-    }
-}
-IndexedDBDataProvider.prototype.add_key = function(allAppeal){
-    let transaction = db.transaction(['people'],'readwrite');
-    let store = transaction.objectStore('people');
-    let request = store.add(allAppeal);
-    request.onerror=function(e){
-        console.log('Eror',e.target.error.name)
-    };
-    request.onsuccess=function (e) {
-        console.log("You did it");
-    }
-};
-IndexedDBDataProvider.prototype.get_lists = function() {
-    let db,openRequest = indexedDB.open('Fans Appeal',1);
-    let customers = [];
-    openRequest.onsuccess = function(event) {
-        console.log("Success!");
-        db = event.target.result;
-        console.log("khgdjskjf",db);
-        let transaction = db.transaction('people','readonly');
-        let objectStore = transaction.objectStore('people');
-       objectStore.openCursor().onsuccess=function(event){
-           let cursor = event.target.result;
-           if(cursor){
-               customers.push(cursor.value);
-               cursor.continue();
-           }else{
-               console.log("Got all customers " , customers);
-           }
-       }
-    }
-    console.log('customers',customers);
-    return customers;
-
+    });
 };
 
+IndexedDBDataProvider.prototype.add_key = function(key,value){
+    return this.ready.then(()=>{
+        return new Promise((resolve,reject)=>{
+            var request =this.getStore().put(value,key);
+            request.onsuccess=resolve;
+            request.onerror=reject;
+        })
+    })
+};
+IndexedDBDataProvider.prototype.get_lists = function(key) {
+    return this.ready.then(()=>{
+        return new Promise((resolve,reject)=>{
+            var request = this.getStore().get(key);
+            request.onsuccess = resolve;
+            request.onerror = reject;
+        })
+    })
+};
+IndexedDBDataProvider.prototype.getStore = function(){
+    return this.db
+        .transaction(['Fans Appeal'],'readwrite')
+        .objectStore('Fans Appeal')
+};
 var DAL = function(){
     //var useLocalStorage = false;
     !window.indexedDB

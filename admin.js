@@ -1,15 +1,14 @@
 
 document.getElementById('addImageButton').addEventListener('click',addImage);
 document.getElementById('sendNewsButton').addEventListener('click',sendNews);
-document.addEventListener("DOMContentLoaded", openIndexedDB, false);
-window.addEventListener('online',function(event){
-    const allNews = data_context.get_lists();
+window.addEventListener('true',function(event){
+    const allNews = data_context.get_lists("appeals");
     sendNewsToServer(allNews);
     if(isOnline()){
     localStorage.removeItem('appeals');
     }
 });
-const allNews= data_context.get_lists();
+const allNews= data_context.get_lists("appeals");
 
 function addImage(){
     const input = document.querySelector('input[type=file]');
@@ -42,16 +41,17 @@ function sendNews() {
     } else {
         if(useLocalStorage){
             allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
-            data_context.add_list(allNews);
+            data_context.add_list("appeals",allNews);
             alert("Saved to local storage");
         }
         else{
-            let person = {
+            let appeals = {
                 imgSrc:newsImageSrc,
                 title:newsTitle,
                 body:newsBody
             };
-            data_context.add_list(person);
+            console.log(appeals);
+            data_context.add_list("appeals",appeals);
             alert("Saved to indexed db");
         }
     }
