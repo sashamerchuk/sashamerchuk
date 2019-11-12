@@ -1,4 +1,4 @@
-var useLocalStorage = true;
+var useLocalStorage = false;
 
 class LocalStorageProvider{
     constructor(){

@@ -15,18 +15,22 @@ document.addEventListener('DOMContentLoaded',function() {
     });
 
     function addImage() {
-        const input = document.querySelector('input[type=file]');
-        const uploadedImage = document.getElementById('uploadedImage');
+        const input = document.querySelector("input[type=file]");
+        const uploadedImage = document.getElementById("uploadedImage");
         if (input.files[0] != null) {
-            uploadedImage.setAttribute('src', window.URL.createObjectURL(input.files[0]));
+            
+            uploadedImage.setAttribute('src', `foto/${input.files[0].name}`);
+            
         }
-        document.getElementById('addImageButton').blur();
+        document.getElementById("addImageButton").blur();
     }
 
     function sendNews() {
         let newsImageSrc, newsTitle, newsBody;
 
         newsImageSrc = document.getElementById("uploadedImage").getAttribute("src");
+        newImage = document.getElementById("uploadedImage");
+        
         newsTitle = document.getElementById("newsTitle").value.trim();
         if (newsTitle === "" || newsTitle == null) {
             alert("News title is incorrect!");

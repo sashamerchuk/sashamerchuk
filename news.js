@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded",function() {
     }
 
     function addNews(imgSrc, title, body) {
+
         const newsBlock = document.createElement("div");
         newsBlock.className = "childFlex";
         const img = document.createElement("img");
