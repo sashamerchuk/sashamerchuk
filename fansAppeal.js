@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded",function() {
             allAppeals = [];
         });
     });
+    
     provider.get("appeals", (appeals) => {
         if (appeals) {
             allAppeals = appeals;

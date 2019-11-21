@@ -1,6 +1,14 @@
-const http = require('http');
-http.createServer(function(request,responce){
-    responce.end("hello node.js");
-}).listen(3000,"127.0.0.1",function(){
-    console.log("Сервер начал прослушивание запросов на порту 3000");
-});
+var http = require("http");
+ 
+http.createServer(function(request, response){
+     
+    console.log("Url: " + request.url);
+    console.log("Тип запроса: " + request.method);
+    console.log("User-Agent: " + request.headers["user-agent"]);
+    console.log("Все заголовки");
+    console.log(request.headers);
+    response.setHeader("UserId", 12);
+    response.setHeader("Content-Type", "text/html; charset=utf-8;");
+    response.write("<h2>hello world</h2>");
+    response.end();
+}).listen(3000);

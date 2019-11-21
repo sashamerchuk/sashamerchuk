@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded',function() {
         }
 
         document.getElementById("newsTitle").value = "";
+        
         document.getElementById("newsBody").value = "";
         document.getElementById("sendNewsButton").blur();
 
