@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded',function() {
         const input = document.querySelector("input[type=file]");
         const uploadedImage = document.getElementById("uploadedImage");
         if (input.files[0] != null) {
-            
             uploadedImage.setAttribute('src', `foto/${input.files[0].name}`);
-            
         }
         document.getElementById("addImageButton").blur();
     }
