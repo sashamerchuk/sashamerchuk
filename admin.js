@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded',function() {
             if (news) {
                 allNews = news;
             }
-            sendNewsToServer(allNews);
+            sendAllNewsToServer(allNews);
             provider.remove("news");
             allNews = [];
         });
@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded',function() {
 
         newsImageSrc = document.getElementById("uploadedImage").getAttribute("src");
         newImage = document.getElementById("uploadedImage");
-        
         newsTitle = document.getElementById("newsTitle").value.trim();
+
         if (newsTitle === "" || newsTitle == null) {
             alert("News title is incorrect!");
             document.getElementById("sendNewsButton").blur();
@@ -51,15 +51,25 @@ document.addEventListener('DOMContentLoaded',function() {
         }
 
         document.getElementById("newsTitle").value = "";
-        
         document.getElementById("newsBody").value = "";
         document.getElementById("sendNewsButton").blur();
 
     }
 
-    function sendNewsToServer(allNews) {
-        if (allNews) {
-            alert("Successfully sent to server!")
-        }
+    function sendNewsToServer(imgSrc,title,body) {
+        fetch("/all_news",{
+            method:"POST",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body:JSON.stringify({imgSrc:imgSrc,title:title,body:body}),
+        })
+        .catch(error => console.error("Cannot fetch data:",error));
     }
+
+    function sendAllNewsToServer(allNews){
+        for(let i = 0; i < allNews.length;i++){
+            sendNewsToServer(allNews[i].imgSrc,allNews[i].title,allNews[i].body)
+        }
+    }    
 });
