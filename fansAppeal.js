@@ -10,22 +10,18 @@ document.addEventListener("DOMContentLoaded",function() {
             sendAllAppealsToServer(allAppeals);
             showAllAppeals(allAppeals);
             provider.remove("appeals");
-            allAppeals = [];
+            allAppeals = [];    
         });
     });
     
-    provider.get("appeals", (appeals) => {
-        if (appeals) {
-            allAppeals = appeals;
-        }
-    });
+
     if (isOnline()) {
         sendAllAppealsToServer(allAppeals);
         provider.remove("appeals");
         allAppeals = [];
 
         let req = new XMLHttpRequest();
-        req.open("GET","/all_appeals",true);
+        req.open("GET","/appeal",true);
         req.send();
         req.onreadystatechange = function(){
             if(req.readyState === XMLHttpRequest.DONE){
@@ -36,7 +32,7 @@ document.addEventListener("DOMContentLoaded",function() {
                     showAllAppeals(data);
                 }
             }
-        }
+        };
     }
 
     function addAppeal() {
@@ -55,7 +51,7 @@ document.addEventListener("DOMContentLoaded",function() {
         const time = new Date();
 
         if (isOnline()) {
-            sendAppealsToServer(nickname,time,commentText);
+            sendAppealToServer(nickname,time,commentText);
             showAppeal(nickname, time, commentText);
             alert("Successfully sent to server");
         } else {
@@ -95,22 +91,22 @@ document.addEventListener("DOMContentLoaded",function() {
             showAppeal(allAppeals[i].name, new Date(allAppeals[i].time),allAppeals[i].text)
         }
     }
-
-
-    function sendAppealsToServer(name,time,text) {
-        fetch("/all_appeals",{
+    function sendAppealToServer(name, time, text) {
+        fetch("/appeal", {
             method: "POST",
-            headers:{
-                "Content-type":"application/json"
+            headers: {
+                "Content-type": "application/json"
             },
-            body: JSON.stringify({name:name,time:time,text:text}),
+            body: JSON.stringify({name: name, time: time, text: text}),
         })
-        .catch(error => console.error("Cannot fetch data: ",error))
+            .catch(error => console.error("Cannot fetch data:", error));
     }
 
-    function sendAllAppealsToServer(allAppeals){
-        for(let i = 0;i < allAppeals.length;i++){
-            sendAppealsToServer(allAppeals[i].name,allAppeals[i].time,allAppeals[i].text)
+    function sendAllAppealsToServer(allAppeals) {
+        for (let i = 0; i < allAppeals.length; i++) {
+            sendAppealToServer(allAppeals[i].name, allAppeals[i].time, allAppeals[i].text)
         }
     }
+
+
 });

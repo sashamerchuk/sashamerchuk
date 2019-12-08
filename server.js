@@ -8,46 +8,29 @@ const url = "mongodb://localhost:27017";
 app.use('/',express.static('.'));
 app.use(bodyParser.json());
 
-app.get('/all_appeals',function(req,res){
-    mongoClient.connect(url,function(err,db){
-        if(err){
+app.get('/appeal', function (req, res) {
+    mongoClient.connect(url, function (err, db) {
+        if (err) {
             throw err;
         }
-        let dbo = db.db("project-db");
-        let result = dbo.collection("all-appeals").find().toArray().then(function(data){
+
+        let dbo = db.db("server-db");
+        let result = dbo.collection("appeal").find().toArray().then(function (data) {
             res.send(data);
-        })
+        });
         db.close();
     });
 });
 
-app.post('/all-appeals',function(req,res){
-    mongoClient.connect(url,function(err,db){
-        if(err){
-            throw err;
-        }
-        if(req.body){
-            let dbo = db.db("project-db");
-            dbo.collection("all-appeals").insert(req.body,function(err,res){
-                if(err){
-                    throw err;
-                }
-                db.close();
-            });
-        }
-    });
-    res.send();
-});
-
-app.put('/all_appeals',function(req,res){
+app.post('/appeal', function (req, res) {
     mongoClient.connect(url, function (err, db) {
         if (err) {
             throw err;
         }
 
         if (req.body) {
-            let dbo = db.db("project-db");
-            dbo.collection("all_appeals").update(req.body, function(err, res) {
+            let dbo = db.db("server-db");
+            dbo.collection("appeal").insert(req.body, function(err, res) {
                 if (err) throw err;
                 db.close();
             });
@@ -56,15 +39,32 @@ app.put('/all_appeals',function(req,res){
     res.send();
 });
 
-app.delete('/all_appeals', function (req, res) {
+app.put('/appeal', function (req, res) {
     mongoClient.connect(url, function (err, db) {
         if (err) {
             throw err;
         }
 
         if (req.body) {
-            let dbo = db.db("project-db");
-            dbo.collection("all_appeals").remove(req.body, function(err, res) {
+            let dbo = db.db("server-db");
+            dbo.collection("appeal").update(req.body, function(err, res) {
+                if (err) throw err;
+                db.close();
+            });
+        }
+    });
+    res.send();
+});
+
+app.delete('/appeal', function (req, res) {
+    mongoClient.connect(url, function (err, db) {
+        if (err) {
+            throw err;
+        }
+
+        if (req.body) {
+            let dbo = db.db("server-db");
+            dbo.collection("appeal").remove(req.body, function(err, res) {
                 if (err) throw err;
                 db.close();
             });
@@ -79,7 +79,7 @@ app.get('/all_news', function (req, res) {
             throw err;
         }
 
-        let dbo = db.db("project-db");
+        let dbo = db.db("server-db");
         let result = dbo.collection("all_news").find().toArray().then(function (data) {
             res.send(data);
         });
@@ -94,7 +94,7 @@ app.post('/all_news', function (req, res) {
         }
 
         if (req.body) {
-            let dbo = db.db("project-db");
+            let dbo = db.db("server-db");
             dbo.collection("all_news").insert(req.body, function(err, res) {
                 if (err) throw err;
                 db.close();
@@ -111,7 +111,7 @@ app.put('/all_news', function (req, res) {
         }
 
         if (req.body) {
-            let dbo = db.db("project-db");
+            let dbo = db.db("server-db");
             dbo.collection("all_news").update(req.body, function(err, res) {
                 if (err) throw err;
                 db.close();
@@ -128,7 +128,7 @@ app.delete('/all_news', function (req, res) {
         }
 
         if (req.body) {
-            let dbo = db.db("project-db");
+            let dbo = db.db("server-db");
             dbo.collection("all_news").remove(req.body, function(err, res) {
                 if (err) throw err;
                 db.close();

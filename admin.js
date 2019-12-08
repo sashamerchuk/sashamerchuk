@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded',function() {
 
         if (isOnline()) {
             alert("Successfully send to server");
+            sendNewsToServer(newsImageSrc,newsTitle,newsBody);
         } else {
             allNews.push({imgSrc: newsImageSrc, title: newsTitle, body: newsBody});
             provider.add("news", allNews);

@@ -1,6 +1,11 @@
 CACHE MANIFEST
 
 CACHE:
+
+bootstrap/css/bootstrap.min.css
+bootstrap/js/jquery.slim.min.js
+bootstrap/js/bootstrap.bundle.min.js
+
 index.html
 index.css
 error.html
