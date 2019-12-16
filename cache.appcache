@@ -1,6 +1,11 @@
 CACHE MANIFEST
 
 CACHE:
+
+bootstrap/css/bootstrap.min.css
+bootstrap/js/jquery.slim.min.js
+bootstrap/js/bootstrap.bundle.min.js
+
 index.html
 index.css
 error.html
@@ -9,10 +14,21 @@ concertVenue.html
 fansAppeal.html
 fragrance.html
 news.html
+foto/autobiography.jpg
+
+foto/rihannaChina.jpg
+foto/maxresdefault.jpg
+foto/rihannaForArticle.jpg
+foto/Rihanna.jpg
+foto/rihannaVogue.jpg
+foto/____26541_650x410.jpg
+foto/Без%20названия.jpg
+foto/dread.jpg
+foto/rihann.jpg
+foto/rihannaimg10.jpg
+foto/history.png
 
 
-NETWORK:
-*
 FALLBACK:
-/ offline.html
+/ error.html
 

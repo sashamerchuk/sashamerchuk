@@ -132,13 +132,8 @@ header nav ul li:hover >ul, ul li ul :hover{
     justify-content: space-between;
     flex-flow: row wrap;
 }
-.flexChild{
-    margin-right: 0;
-    margin-left:5%;
-    width:20%;
-}
 .flexChild1 li{
-    width:200px;
+    width:180px;
 }
 
 main{
@@ -147,16 +142,18 @@ main{
 }
 
 .container1{
-    background-image:url("foto/add_photo-512.png");
-    background-repeat: no-repeat;
-    background-position: 30% 50%;
     border-radius: 20px;
     margin-top:10%;
     width:80%;
     height:300px;
 }
-.container1 img{
+.container1{
     width:100%;
+    height:250px;
+}
+.container1 img{
+    width:400px;
+    height:300px;
 }
 .input{
     background-color:silver;

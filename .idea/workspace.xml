@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6d801f51-e5f9-4f0c-9450-48d3ad3b882d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fansAppeal.js" beforeDir="false" afterPath="$PROJECT_DIR$/fansAppeal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adminDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/adminDB.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +30,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javascript" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../eshopper" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -90,6 +91,29 @@
       <workItem from="1571386189752" duration="1021000" />
       <workItem from="1571475216810" duration="68000" />
       <workItem from="1571741114507" duration="16415000" />
+      <workItem from="1571772438183" duration="647000" />
+      <workItem from="1571816040724" duration="3523000" />
+      <workItem from="1571822156393" duration="1951000" />
+      <workItem from="1571838876529" duration="4644000" />
+      <workItem from="1571864078649" duration="1021000" />
+      <workItem from="1572274426390" duration="734000" />
+      <workItem from="1572277585093" duration="15289000" />
+      <workItem from="1572345790417" duration="5354000" />
+      <workItem from="1572517287051" duration="341000" />
+      <workItem from="1572518738911" duration="231000" />
+      <workItem from="1572539525837" duration="4767000" />
+      <workItem from="1572596337478" duration="2222000" />
+      <workItem from="1572695295484" duration="26909000" />
+      <workItem from="1572775459970" duration="19917000" />
+      <workItem from="1572809376715" duration="323000" />
+      <workItem from="1572970055014" duration="1566000" />
+      <workItem from="1572972839725" duration="602000" />
+      <workItem from="1572985759831" duration="4133000" />
+      <workItem from="1573057740560" duration="1136000" />
+      <workItem from="1573468842436" duration="4863000" />
+      <workItem from="1573475747987" duration="2158000" />
+      <workItem from="1573493680595" duration="500000" />
+      <workItem from="1575758572751" duration="34000" />
     </task>
     <servers />
   </component>
